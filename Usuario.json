@@ -1,0 +1,12 @@
+{
+    "credenciales": [
+        {
+            "usuario": "us1",
+            "contrasena": "bio123"
+        },
+        {
+            "usuario": "us2",
+            "contrasena": "789"
+        }
+    ]
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>603</width>
+    <height>255</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>40</y>
+     <width>411</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>20</pointsize>
+     <italic>false</italic>
+     <kerning>true</kerning>
+     <fontweight>DemiBold</fontweight>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 600 20pt &quot;Segoe UI&quot;;
+    color: #000000;
+    background-color: rgba(225,253,255,0.6); 
+    border: 2px solid #000000; 
+    border-radius: 15px; 
+    padding: 10px 
+</string>
+   </property>
+   <property name="text">
+    <string>BIENVENIDO A MED-ANALYZE</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="iniciar">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>160</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 10pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 10px; 
+
+</string>
+   </property>
+   <property name="text">
+    <string>INICIAR SESIÓN</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label1">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-200</y>
+     <width>1111</width>
+     <height>661</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>menu bienvenida.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label1</zorder>
+  <zorder>label</zorder>
+  <zorder>iniciar</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

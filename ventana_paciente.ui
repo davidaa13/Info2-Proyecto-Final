@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>info_imagen</class>
+ <widget class="QDialog" name="info_imagen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>466</width>
+    <height>288</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <widget class="QPushButton" name="volver">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>240</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 10pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 10px; </string>
+   </property>
+   <property name="text">
+    <string>VOLVER</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>10</y>
+     <width>481</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 15pt bold &quot;Malgun Gothic&quot;; 
+background-color: rgba(255, 255, 255,0.5);   
+border: 2px solid rgba(0,0,0,0.7); 
+</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;INFORMACIÓN DEL PACIENTE&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>491</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(169, 228, 255,0.3)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../Proyecto_final_info/Imagenes_jpg_png/info.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="guardar">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>240</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 10pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 10px; 
+</string>
+   </property>
+   <property name="text">
+    <string>GUARDAR</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>155</y>
+     <width>251</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Consolas&quot;;
+color:black;
+text-decoration: underline;</string>
+   </property>
+   <property name="text">
+    <string>Parte del cuerpo examinada:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>71</y>
+     <width>182</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>182</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Consolas&quot;;
+color:black;
+text-decoration: underline;</string>
+   </property>
+   <property name="text">
+    <string>Fecha:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="sexo">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>116</y>
+     <width>67</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Romantic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>197</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Consolas&quot;;
+color:black;
+text-decoration: underline;</string>
+   </property>
+   <property name="text">
+    <string>Peso paciente (Kg):</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="peso">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>200</y>
+     <width>67</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Romantic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="fecha">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>74</y>
+     <width>67</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Romantic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>113</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Consolas&quot;;
+color:black;
+text-decoration: underline;</string>
+   </property>
+   <property name="text">
+    <string>Sexo paciente:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="cuerpo">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>158</y>
+     <width>67</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;Romantic&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>sexo</zorder>
+  <zorder>label_6</zorder>
+  <zorder>peso</zorder>
+  <zorder>fecha</zorder>
+  <zorder>label_3</zorder>
+  <zorder>cuerpo</zorder>
+  <zorder>label_2</zorder>
+  <zorder>volver</zorder>
+  <zorder>guardar</zorder>
+  <zorder>label</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

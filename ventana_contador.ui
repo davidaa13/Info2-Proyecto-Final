@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::NonModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>510</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>510</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>510</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>JPG/Logosímbolo-vertical.jpg</normaloff>JPG/Logosímbolo-vertical.jpg</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QLabel" name="img">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>281</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid black;
+background-color: rgba(255, 255, 255,0.5);   </string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>JPG/Logosímbolo-vertical.jpg</pixmap>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>400</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 11pt &quot;Consolas&quot;;
+
+background-color: rgba(255, 255, 255,0.8);   </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>-20</x>
+     <y>10</y>
+     <width>541</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25pt bold &quot;Malgun Gothic&quot;; 
+background-color: rgba(255, 255, 255,0.5);   
+border: 2px solid rgba(0,0,0,0.7); 
+</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;CONTEO EN IMÁGENES&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>200</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Consolas&quot;;
+border: 2px solid black;
+background-color: rgba(255, 255, 255,0.8);   </string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Dimensión del Kernel: &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="num_kernel">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>240</y>
+     <width>88</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 11pt &quot;Consolas&quot;;
+
+background-color: rgba(255, 255, 255,0.8);   
+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="volver">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>440</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 10pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 8px; </string>
+   </property>
+   <property name="text">
+    <string>VOLVER</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cerrar">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>440</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 10pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 8px; </string>
+   </property>
+   <property name="text">
+    <string>CERRAR SESIÓN</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="erosion">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>100</y>
+     <width>81</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 10pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 8px; </string>
+   </property>
+   <property name="text">
+    <string>Erosión</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="dilat">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>100</y>
+     <width>81</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 10pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 8px; </string>
+   </property>
+   <property name="text">
+    <string>Dilatación</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="apert">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>150</y>
+     <width>81</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 10pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 8px; </string>
+   </property>
+   <property name="text">
+    <string>Apertura</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cierre">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>150</y>
+     <width>81</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 10pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 8px; </string>
+   </property>
+   <property name="text">
+    <string>Cierre</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>-40</x>
+     <y>0</y>
+     <width>581</width>
+     <height>491</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>foto analisis.jpeg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>350</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 11pt &quot;Consolas&quot;;
+border: 2px solid black;
+background-color: rgba(255, 255, 255,0.8);   </string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Selección de imagenes:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="rest">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>290</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 10pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 8px; </string>
+   </property>
+   <property name="text">
+    <string>RESTABLECER</string>
+   </property>
+  </widget>
+  <zorder>label_4</zorder>
+  <zorder>img</zorder>
+  <zorder>comboBox</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>num_kernel</zorder>
+  <zorder>volver</zorder>
+  <zorder>cerrar</zorder>
+  <zorder>erosion</zorder>
+  <zorder>dilat</zorder>
+  <zorder>apert</zorder>
+  <zorder>cierre</zorder>
+  <zorder>label_3</zorder>
+  <zorder>rest</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

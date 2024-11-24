@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ventana_menu</class>
+ <widget class="QDialog" name="Ventana_menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>659</width>
+    <height>416</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>20</y>
+     <width>681</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25pt bold &quot;Malgun Gothic&quot;; 
+background-color: rgba(255, 255, 255,0.5);   
+border: 2px solid rgba(0,0,0,0.7); 
+</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Elija el análisis que desea realizar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cerrar">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>370</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 10pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 10px; 
+</string>
+   </property>
+   <property name="text">
+    <string>CERRAR SESIÓN</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>-50</x>
+     <y>0</y>
+     <width>711</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>foto menu.jpeg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="img_med">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>200</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 15pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 10px; 
+</string>
+   </property>
+   <property name="text">
+    <string>Imágenes médicas</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cont">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>160</y>
+     <width>169</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 15pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 10px; 
+</string>
+   </property>
+   <property name="text">
+    <string>Conteo</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sen_fis">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>250</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: bold 15pt &quot;Arial&quot;; 
+color: #FFFFFF;
+background-color: rgb(0, 0, 117); 
+border-radius: 10px; 
+</string>
+   </property>
+   <property name="text">
+    <string>Señales fisiológicas</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>110</y>
+     <width>361</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt bold &quot;Malgun Gothic&quot;; 
+background-color: rgba(255, 255, 255,0.7);   
+border: 2px solid rgba(0,0,0,0.7); 
+
+</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Señor usuario, por favor tenga en cuenta &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;que cada análisis requiere un tipo &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;de archivo diferente&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Opción 1: JPG o PNG&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Opción 2: DICOM&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Opción 3: MAT&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>cerrar</zorder>
+  <zorder>img_med</zorder>
+  <zorder>cont</zorder>
+  <zorder>sen_fis</zorder>
+  <zorder>label_3</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
