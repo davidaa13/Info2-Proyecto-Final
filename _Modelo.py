@@ -6,9 +6,10 @@ import cv2
 import imageio.v2 as imageio
 
 data= {}
-data["credenciales"]= []
+data["credenciales"] = []
 data["credenciales"].append({"usuario": "us1", "contrasena": "bio123" })
 data["credenciales"].append({"usuario": "us2", "contrasena": "789" })
+data["credenciales"].append({"usuario": "us3", "contrasena": "123" })
 with open("Usuario.json","w") as file:
     json.dump(data,file, indent=4)
     

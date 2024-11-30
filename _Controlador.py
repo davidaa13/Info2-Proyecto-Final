@@ -41,11 +41,13 @@ class Coordinador:
     def devolver_segmento(self, x_min, x_max):
         return self.__mi_modelo.devolver_segmento(x_min, x_max)
     
+    
+    
         
 
 #Codigo cliente
 def main():
-    app= QApplication(sys.argv)
+    app= QApplication(sys.argv) #app de QApplication es donde irá toda la interfaz, sys.argv ayuda a entender por medio de argumentos las operaciones que haga el usuario desde el sistema operativo
     vista= VentanaInicial()
     modelo= Sistema()
     coordinador= Coordinador(vista, modelo)

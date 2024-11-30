@@ -10,6 +10,7 @@ import numpy as np
 import math
 import scipy.io as sio
 from scipy.io import loadmat
+from PyQt6.QtCore import Qt
 
 class Eje_sagital(FigureCanvas):
     def __init__(self, parent, archivo, carpeta, numero):
@@ -91,7 +92,7 @@ class Eje_axial(FigureCanvas):
 class VentanaInicial(QDialog):
     def __init__(self, ppal=None):
         super().__init__(ppal)
-        loadUi("ventana_inicial.ui",self)
+        loadUi("ventana_inicial.ui", self)
         self.setWindowTitle("MED-ANALYZE")
         self.setup()
 
@@ -434,9 +435,10 @@ class Graficas_Senales(FigureCanvas):
 
     def graficar_senal(self, datos, matriz, min,max):
         self.__axis.clear()
-        for c in range(datos.shape[0]):
+        
+        for c in range(matriz.shape[0]):
             etiqueta = f'Canal {c+1}'
-            self.__axis.plot(matriz[c,:]+c*2500, label=etiqueta)
+            self.__axis.plot(matriz[c,:], label=etiqueta)
             self.__axis.set_xlim(min, max)
         self.__axis.legend(loc ='right')
         self.__axis.set_xlabel('Señales')
@@ -486,20 +488,14 @@ class Ventana_senfis(QDialog):
         self.grafica_canales.setLayout(layout_2)
         self.__graf_señales = Graficas_Senales(self.grafica_canales, width=5, height=4, dpi=100)
         layout_2.addWidget(self.__graf_señales)
-        self.num_canal.hide()
-        self.canales.hide()
         self.todos.hide()
-        self.canal.hide()
         self.label_6.show()
-        self.graficar.hide()
-        self.p_min.setPlaceholderText("Numero minimo")
-        self.p_max.setPlaceholderText("Numero maximo")
+        self.p_min.setPlaceholderText("Número minimo")
+        self.p_max.setPlaceholderText("Número maximo")
         self.p_min.editingFinished.connect(self.validar_min_max)
         self.p_max.editingFinished.connect(self.validar_min_max)
         if self.__ventanaPadre is not None and self.__ventanaPadre._controlador is not None:
             self.todos.clicked.connect(self.grafSeg)
-            self.canal.clicked.connect(self.grafCanal)
-        self.canales.hide() 
         self.cerrar.clicked.connect(self.mostrar_inicio)
         self.volver.clicked.connect(self.menu) 
         self.adelantar_1.hide()
@@ -516,11 +512,11 @@ class Ventana_senfis(QDialog):
         maximo_text = self.p_max.text()
         if (minimo_text and maximo_text) == '':
             self.todos.hide()
-            self.canal.hide()
-            self.graficar.hide()
+            
+
         else:
             self.todos.show()
-            self.canal.show()
+            
 
     def cargar_senal(self):
 
@@ -537,18 +533,19 @@ class Ventana_senfis(QDialog):
                     filas, columnas, submatrices = self.__num_array.shape
                     self.__matriz = np.reshape(self.__num_array, (filas, columnas * submatrices), order='F')
                     filas, columnas = self.__matriz.shape
-                    self.senal_mat.setRowCount(filas)
+                    self.senal_mat.setRowCount(filas) 
                     self.senal_mat.setColumnCount(columnas)
                     for i in range(filas):
                         for j in range(columnas):
                             item = QTableWidgetItem(str(self.__matriz[i, j]))
                             self.senal_mat.setItem(i, j, item)
                     filas_ma = range(self.__matriz.shape[0])
+                    self.canales.clear()
                     for fila in filas_ma:
                         self.canales.addItem(str(fila+1))
                     if len(filas_ma) == 1:
                         self.canales.setCurrentIndex(0)
-                        self.selecCanal
+                        self.selecCanal 
                     self.canales.currentIndexChanged.connect(self.mostrar_matriz)
                     self.filas.setText(str(self.__matriz.shape[0]))
                     self.columnas.setText(str(self.__matriz.shape[1]))
@@ -563,6 +560,7 @@ class Ventana_senfis(QDialog):
                             item = QTableWidgetItem(str(self.__matriz[i, j]))
                             self.senal_mat.setItem(i, j, item)
                     filas_ma = range(self.__matriz.shape[0])
+                    self.canales.clear()
                     for fila in filas_ma:
                         self.canales.addItem(str(fila+1))
                     if len(filas_ma) == 1:
@@ -572,33 +570,37 @@ class Ventana_senfis(QDialog):
                     self.columnas.setText(str(self.__matriz.shape[1]))
                     self.__ventanaPadre._controlador.pasar_informacion(self.__matriz)
     
-        except AttributeError:
-            text = f"No es una llave válida, ya que la opción seleccionada no es un arreglo. Intente de nuevo"
-            message = QMessageBox.information(self, "Llave inválida", text, QMessageBox.StandardButton.Ok)
-
+        except KeyError:
+            QMessageBox.warning(self, "Llave no encontrada", "La llave seleccionada no existe.")
+            print("Llave no encontrada", "La llave seleccionada no existe.")
+        except Exception as e:
+            QMessageBox.critical(self, "Error inesperado", f"Ocurrió un error: {str(e)}")
+            print("Error inesperado", f"Ocurrió un error: {e}")
+            
+            
     def grafSeg(self):
         self.adelantar_1.show()
         self.retroceder_1.show()
-        self.num_canal.hide()
-        self.canales.hide()
-        self.graficar.hide()   
         self.adelantar_2.hide()
         self.retroceder_2.hide()
+        
         try:
-            self.__x_max = int(self.p_maximo.text())
-        except (AttributeError, ValueError):
+            self.__x_max = int(self.p_max.text())
+        except Exception as e:
             text = "El rango es incorrecto. Intente de nuevo"
             message = QMessageBox.warning(self, "Error de rango", text, QMessageBox.StandardButton.Ok)
+            print("GRAF: ", e)
             
         if self.__x_max > self.__matriz.shape[1]:
             text = "El rango no es válido. Intente de nuevo"
             message = QMessageBox.warning(self, "Error de rango", text, QMessageBox.StandardButton.Ok)
             
         try:
-            self.__x_min = int(self.p_minimo.text())
-        except (AttributeError, ValueError):
+            self.__x_min = int(self.p_min.text())
+        except  Exception as e:
             text = "El rango es incorrecto. Intente de nuevo"
             message = QMessageBox.warning(self, "Error de rango", text, QMessageBox.StandardButton.Ok)
+            print("GRAF: ", e)
 
         try:
             self.__graf_señales.graficar_senal(self.__ventanaPadre._controlador.devolver_segmento(self.__x_min, self.__x_max),self.__matriz, self.__x_min,self.__x_max)
@@ -611,25 +613,26 @@ class Ventana_senfis(QDialog):
         self.retroceder_2.show()
         self.adelantar_1.hide()
         self.retroceder_1.hide()
-        self.num_canal.show()
-        self.canales.show()
-        self.graficar.show()
+        
         try:
             self.__x_max = int(self.p_max.text())
-        except (AttributeError, ValueError):
+        except Exception as e:
             text = "El rango es incorrecto. Intente de nuevo"
             message = QMessageBox.warning(self, "Error de rango", text, QMessageBox.StandardButton.Ok )
+            print("GRAF: ", e)
         try:
             self.__x_min = int(self.p_min.text())
-        except (AttributeError, ValueError):
+        except  Exception as e:
             text = "El rango es incorrecto. Intente de nuevo"
             message = QMessageBox.warning(self, "Error de rango", text, QMessageBox.StandardButton.Ok )
+            print("GRAF: ", e)
         try:
             canal = self.canales.currentText()  # Obtener el texto del comboBox
             self.__canal = int(canal)  # Intentar convertirlo a entero
-        except ValueError:
+        except  Exception as e:
             text = "Seleccione un canal válido."
             QMessageBox.warning(self, "Error de canal", text, QMessageBox.StandardButton.Ok)
+            print("GRAF: ", e)
             return  # Salir del método si ocurre un error
 
     
@@ -649,13 +652,20 @@ class Ventana_senfis(QDialog):
             return
         self.__x_min = self.__x_min - 2000
         self.__x_max = self.__x_max - 2000
-        self.__graf_señales.graficar_senal(self.__ventanaPadre._controlador.devolver_segmento(self.__x_min, self.__x_max),self.__matriz, self.__x_min,self.__x_max)
-
+        try:
+            self.__graf_señales.graficar_senal(self.__ventanaPadre._controlador.devolver_segmento(self.__x_min, self.__x_max),self.__matriz, self.__x_min,self.__x_max)
+        except Exception as e:
+            print(e, "excepcion")
+        
     def adelantar_senal(self):
         self.__x_min = self.__x_min + 2000
         self.__x_max = self.__x_max + 2000
-        self.__graf_señales.graficar_senal(self.__ventanaPadre._controlador.devolver_segmento(self.__x_min, self.__x_max),self.__matriz, self.__x_min,self.__x_max)
-
+        
+        try:
+            self.__graf_señales.graficar_senal(self.__ventanaPadre._controlador.devolver_segmento(self.__x_min, self.__x_max),self.__matriz, self.__x_min,self.__x_max)
+        except Exception as e:
+            print(e, "excepcion")
+        
     def retroceder_canal(self):
         if self.__x_min < 2000:
             return
@@ -667,6 +677,13 @@ class Ventana_senfis(QDialog):
         self.__x_min = self.__x_min + 2000
         self.__x_max = self.__x_max + 2000
         self.__graf_señales.graficarCanal(self.__matriz,self.__canal, self.__x_min, self.__x_max)
+        
+    def keyPressEvent(self, event):
+        if event.key() == 16777220 or event.key() == 16777221:  # Códigos de Enter/Return
+            event.ignore()  # Esto evita que el evento de Enter cierre la ventana
+            self.grafSeg()
+        else:
+            super().keyPressEvent(event)
         
 
             
